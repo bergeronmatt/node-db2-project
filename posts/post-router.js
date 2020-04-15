@@ -2,8 +2,18 @@
 
 const express = require('express');
 
+
+// const knex = require('express');
+// const db = knex({
+//     client: 'sqlite3',
+//     connection: {
+//         filename: './data/car-dealer.db3'
+//     },
+//     useNullAsDefault: true
+// });
+
 // database using knex
-const db = require('../data/dbConfig');
+const db = require('../data/dbConfig.js');
 const router = express.Router();
 
 /** ENDPOINTS */

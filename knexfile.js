@@ -1,10 +1,44 @@
-//knex migrations
+// Update with your config settings.
 
 module.exports = {
 
-    client: 'sqlite3', //configure knex to connect to the database using sqlite3
-    useNullAsDefault: true, //flag required by sqlite3
+  development: {
+    client: 'sqlite3',
     connection: {
-        filename: "./data/cars.db3" //location of the database file
+      filename: './dev.sqlite3'
     }
+  },
+
+  staging: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  },
+
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
+
 };
