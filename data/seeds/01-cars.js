@@ -4,8 +4,9 @@ exports.seed = function(knex) {
   return knex('cars').truncate()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, vin: '15243798652', make: 'Toyota', model: 'Camry', mileage: '30000',}
+      return knex('cars').insert([
+        {id: 1, vin: '15243798652', make: 'Toyota', model: 'Camry', mileage: '30000'},
+        {id: 2, vin: '98754123568', make: 'Ford', model: 'Focus', mileage: '50000'}
       ]);
     });
 };
