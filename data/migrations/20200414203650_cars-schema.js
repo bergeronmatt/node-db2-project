@@ -8,7 +8,7 @@ exports.up = function(knex) {
     tbl.text('vin').notNull().unique()
     tbl.text('make').notNull()
     tbl.text('model').notNull()
-    tbl.text('mileage').notNull()
+    tbl.float('mileage').notNull()
   });
 };
 
